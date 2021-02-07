@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using src.Api.Domain.Entities;
+using src.Api.Domain.Dtos;
 
 namespace src.Api.Domain.Interfaces.Services.User
 {
     public interface ILoginService
     {
-        Task<object> FindByLogin(UserEntity user);
+        Task<object> FindByLogin(LoginDto user);
     }
 }
