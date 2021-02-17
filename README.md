@@ -10,6 +10,7 @@ Aplicação desenolvida para fins acadêmicos com o objetivo de utlizar Arquitet
 - [ASP.NET Core MVC v3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1).
 - [C#](https://docs.microsoft.com/pt-br/dotnet/csharp/getting-started/).
 - [Entity Framework Core v3.1.9](https://docs.microsoft.com/pt-br/ef/core/).
+- [SQL Server](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads).
 - [MySQL](https://www.mysql.com/).
 - [Swagger](https://swagger.io/).
 - [JWT](https://jwt.io/).
