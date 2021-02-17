@@ -10,7 +10,7 @@ using src.Api.Data.Context;
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210217142858_UserMigration")]
+    [Migration("20210217225521_UserMigration")]
     partial class UserMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace Data.Migrations
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

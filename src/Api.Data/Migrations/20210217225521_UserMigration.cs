@@ -13,7 +13,7 @@ namespace Data.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     CreateAt = table.Column<DateTime>(nullable: true),
-                    UpdateAt = table.Column<DateTime>(nullable: false),
+                    UpdateAt = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 60, nullable: false),
                     Email = table.Column<string>(maxLength: 100, nullable: true)
                 },
