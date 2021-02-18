@@ -15,14 +15,14 @@ namespace src.Api.CrossCutting.DependencyInjection
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             serviceCollection.AddScoped<IUserRepository, UserImplementation>();
 
-            /*
             serviceCollection.AddDbContext<MyContext>
             (options => options.UseMySql("Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=******"));
-            */
 
+            /*
             serviceCollection.AddDbContext<MyContext>(
                 options => options.UseSqlServer("Server=.\\SQLEXPRESS;Database=dbAPI;User Id=sa;Password=******")
             );
+            */
         }
     }
 }

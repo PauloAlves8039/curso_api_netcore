@@ -22,12 +22,16 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_User", x => x.Id);
                 });
 
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id", "CreateAt", "Email", "Name", "UpdateAt" },
+                values: new object[] { new Guid("3b8cb7ef-ab13-4063-8227-d3ef7d49aec9"), new DateTime(2021, 2, 18, 20, 25, 47, 270, DateTimeKind.Local).AddTicks(4533), "mfrinfo@mail.com", "Administrador", new DateTime(2021, 2, 18, 20, 25, 47, 273, DateTimeKind.Local).AddTicks(1828) });
+
             migrationBuilder.CreateIndex(
                 name: "IX_User_Email",
                 table: "User",
                 column: "Email",
-                unique: true,
-                filter: "[Email] IS NOT NULL");
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
