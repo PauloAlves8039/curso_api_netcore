@@ -18,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using src.Api.CrossCutting.DependencyInjection;
 using src.Api.CrossCutting.Mappings;
+using src.Api.Data.Context;
 using src.Api.Domain.Security;
 
 namespace application
@@ -146,6 +147,18 @@ namespace application
             {
                 endpoints.MapControllers();
             });
+
+            if (Environment.GetEnvironmentVariable("MIGRATION").ToLower() == "APLICAR".ToLower())
+            {
+                using (var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    using (var context = service.ServiceProvider.GetService<MyContext>())
+                    {
+                        context.Database.Migrate();
+                    }
+                }
+            }
+
         }
     }
 }
