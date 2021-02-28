@@ -9,42 +9,40 @@ using Xunit;
 
 namespace src.Api.Application.Test.Usuario.QuandoRequisitarCreate
 {
-    public class Retorno_BadRequest
+    public class Retorno_BadRequest_Update
     {
         private UsersController _controller;
 
-        [Fact(DisplayName = "É possível Realizar o Created.")]
-        public async Task E_Possivel_Invocar_a_Controller_Create()
+        [Fact(DisplayName = "É possível Realizar o Updated.")]
+        public async Task E_Possivel_Invocar_a_Controller_Updated()
         {
             var serviceMok = new Mock<IUserService>();
             var nome = Faker.Name.FullName();
             var email = Faker.Internet.Email();
 
-            serviceMok.Setup(m => m.Post(It.IsAny<UserDtoCreate>())).ReturnsAsync(
-                new UserDtoCreateResult
+            serviceMok.Setup(m => m.Put(It.IsAny<UserDtoUpdate>())).ReturnsAsync(
+                new UserDtoUpdateResult
                 {
                     Id = Guid.NewGuid(),
                     Name = nome,
                     Email = email,
-                    CreateAt = DateTime.UtcNow
+                    UpdateAt = DateTime.UtcNow
                 }
             );
 
             _controller = new UsersController(serviceMok.Object);
-            _controller.ModelState.AddModelError("Name", "É um campo Obrigatório!");
+            _controller.ModelState.AddModelError("Email", "É um campo Obrigatório!");
 
-            Mock<IUrlHelper> url = new Mock<IUrlHelper>();
-            url.Setup(x => x.Link(It.IsAny<string>(), It.IsAny<object>())).Returns("http://localhost:5000");
-            _controller.Url = url.Object;
-
-            var userDtoCreate = new UserDtoCreate
+            var userDtoUpdate = new UserDtoUpdate
             {
+                Id = Guid.NewGuid(),
                 Name = nome,
                 Email = email,
             };
 
-            var result = await _controller.Post(userDtoCreate);
+            var result = await _controller.Put(userDtoUpdate);
             Assert.True(result is BadRequestObjectResult);
+            Assert.False(_controller.ModelState.IsValid);
         }
     }
 }

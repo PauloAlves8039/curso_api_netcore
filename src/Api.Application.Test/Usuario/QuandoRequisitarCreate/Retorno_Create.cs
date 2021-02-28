@@ -13,7 +13,7 @@ namespace src.Api.Application.Test.Usuario.QuandoRequisitarCreate
     {
         private UsersController _controller;
 
-        [Fact]
+        [Fact(DisplayName = "É possível Realizar o Created.")]
         public async Task E_Possivel_Invocar_a_Controller_Create()
         {
             var serviceMok = new Mock<IUserService>();
