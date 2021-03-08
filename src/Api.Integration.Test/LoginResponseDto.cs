@@ -8,17 +8,17 @@ namespace src.Api.Integration.Test
         [JsonProperty("authenticated")]
         public bool authenticated { get; set; }
 
-        [JsonProperty("created")]
-        public DateTime created { get; set; }
+        [JsonProperty("create")]
+        public DateTime create { get; set; }
 
         [JsonProperty("expiration")]
         public DateTime expiration { get; set; }
 
-        [JsonProperty("acessToken")]
-        public string acessToken { get; set; }
+        [JsonProperty("accessToken")]
+        public string accessToken { get; set; }
 
-        [JsonProperty("username")]
-        public string username { get; set; }
+        [JsonProperty("userName")]
+        public string userName { get; set; }
 
         [JsonProperty("name")]
         public string name { get; set; }

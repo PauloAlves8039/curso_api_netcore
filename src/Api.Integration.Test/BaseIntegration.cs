@@ -14,10 +14,10 @@ using src.Api.Domain.Dtos;
 
 namespace src.Api.Integration.Test
 {
-    public class BaseIntegration : IDisposable
+    public abstract class BaseIntegration : IDisposable
     {
         public MyContext myContext { get; private set; }
-        public HttpClient client { get; set; }
+        public HttpClient client { get; private set; }
         public IMapper mapper { get; set; }
         public string hostApi { get; set; }
         public HttpResponseMessage response { get; set; }
@@ -25,13 +25,16 @@ namespace src.Api.Integration.Test
         public BaseIntegration()
         {
             hostApi = "http://localhost:5000/api/";
-            var builder = new WebHostBuilder().UseEnvironment("Testing").UseStartup<Startup>();
+            var builder = new WebHostBuilder()
+               .UseEnvironment("Testing")
+               .UseStartup<Startup>();
             var server = new TestServer(builder);
 
             myContext = server.Host.Services.GetService(typeof(MyContext)) as MyContext;
             myContext.Database.Migrate();
 
             mapper = new AutoMapperFixture().GetMapper();
+
             client = server.CreateClient();
         }
 
@@ -46,7 +49,7 @@ namespace src.Api.Integration.Test
             var jsonLogin = await resultLogin.Content.ReadAsStringAsync();
             var loginObject = JsonConvert.DeserializeObject<LoginResponseDto>(jsonLogin);
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", loginObject.acessToken);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", loginObject.accessToken);
         }
 
         public static async Task<HttpResponseMessage> PostJsonAsync(object dataclass, string url, HttpClient client)
@@ -73,7 +76,7 @@ namespace src.Api.Integration.Test
             });
             return config.CreateMapper();
         }
-
         public void Dispose() { }
     }
+
 }
