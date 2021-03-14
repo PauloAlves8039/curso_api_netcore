@@ -19,6 +19,6 @@ namespace src.Api.Domain.Entities
         [Required]
         public Guid MunicipioId { get; set; }
 
-        public MunicioEntity Municio { get; set; }
+        public MunicipioEntity Municio { get; set; }
     }
 }

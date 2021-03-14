@@ -13,6 +13,6 @@ namespace src.Api.Domain.Entities
         [MaxLength(45)]
         public string Nome { get; set; }
 
-        public IEnumerable<MunicioEntity> MyProperty { get; set; }
+        public IEnumerable<MunicipioEntity> Municipios { get; set; }
     }
 }

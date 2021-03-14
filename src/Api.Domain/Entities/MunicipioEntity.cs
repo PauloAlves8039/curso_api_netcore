@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace src.Api.Domain.Entities
 {
-    public class MunicioEntity : BaseEntity
+    public class MunicipioEntity : BaseEntity
     {
         [Required]
         [MaxLength(60)]
