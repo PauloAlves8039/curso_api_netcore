@@ -8,13 +8,13 @@ namespace src.Api.Data.Mapping
     {
         public void Configure(EntityTypeBuilder<CepEntity> builder)
         {
-            builder.ToTable("Municipio");
+            builder.ToTable("Cep");
 
             builder.HasKey(u => u.Id);
 
             builder.HasIndex(u => u.Cep);
 
-            builder.HasOne(c => c.Municio).WithMany(m => m.Ceps);
+            builder.HasOne(c => c.Municipio).WithMany(m => m.Ceps);
         }
     }
 }
