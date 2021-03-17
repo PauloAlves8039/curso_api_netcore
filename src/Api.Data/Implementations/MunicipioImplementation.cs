@@ -24,7 +24,7 @@ namespace src.Api.Data.Implementations
 
         public async Task<MunicipioEntity> GetCompleteById(Guid id)
         {
-            return await _dataset.Include(m => m.Uf).FirstOrDefaultAsync(m => m.CodIBGE.Equals(id));
+            return await _dataset.Include(m => m.Uf).FirstOrDefaultAsync(m => m.Id.Equals(id));
         }
     }
 }
