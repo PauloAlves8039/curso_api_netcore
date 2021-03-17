@@ -38,8 +38,6 @@ namespace src.Api.CrossCutting.Mappings
 
             CreateMap<CepModel, CepDtoUpdate>().ReverseMap();
             #endregion
-
-
         }
     }
 }
