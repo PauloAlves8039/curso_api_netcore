@@ -11,13 +11,13 @@ namespace src.Api.Domain.Interfaces.Services.Municipio
 
         Task<MunicipioDtoCompleto> GetCompleteById(Guid id);
 
-        Task<MunicipioDtoCompleto> GetCompleteByIBGE(Guid codIBGE);
+        Task<MunicipioDtoCompleto> GetCompleteByIBGE(int codIBGE);
 
         Task<IEnumerable<MunicipioDto>> GetAll();
 
         Task<MunicipioDtoCreateResult> Post(MunicipioDtoCreate municipio);
 
-        Task<MunicipioDtoCreateResult> Put(MunicipioDtoUpdate municipio);
+        Task<MunicipioDtoUpdateResult> Put(MunicipioDtoUpdate municipio);
 
         Task<bool> Delete(Guid id);
     }
