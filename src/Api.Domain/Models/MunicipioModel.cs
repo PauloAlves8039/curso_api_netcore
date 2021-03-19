@@ -2,7 +2,7 @@ using System;
 
 namespace src.Api.Domain.Models
 {
-    public class MunicipioModel
+    public class MunicipioModel : BaseModel
     {
         private string _nome;
         public string Nome
