@@ -41,7 +41,7 @@ namespace src.Api.Service.Services
             return _mapper.Map<CepDtoCreateResult>(result);
         }
 
-        public async Task<CepDtoUpdateResult> Put(CepDtoCreate cep)
+        public async Task<CepDtoUpdateResult> Put(CepDtoUpdate cep)
         {
             var model = _mapper.Map<CepModel>(cep);
             var entity = _mapper.Map<CepEntity>(model);

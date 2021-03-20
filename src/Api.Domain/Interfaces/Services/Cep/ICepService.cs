@@ -12,7 +12,7 @@ namespace src.Api.Domain.Interfaces.Services.Cep
 
         Task<CepDtoCreateResult> Post(CepDtoCreate cep);
 
-        Task<CepDtoUpdateResult> Put(CepDtoCreate cep);
+        Task<CepDtoUpdateResult> Put(CepDtoUpdate cep);
 
         Task<bool> Delete(Guid id);
     }
