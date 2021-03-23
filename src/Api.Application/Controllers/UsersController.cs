@@ -65,7 +65,7 @@ namespace src.Api.Application.Controllers
             }
         }
 
-        [Authorize("Bearer")]
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] UserDtoCreate user)
         {
@@ -119,6 +119,7 @@ namespace src.Api.Application.Controllers
             }
         }
 
+        [Authorize("Bearer")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(Guid id)
         {
