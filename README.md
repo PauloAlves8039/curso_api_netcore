@@ -15,7 +15,7 @@ Aplicação desenolvida para fins acadêmicos com o objetivo de utlizar Arquitet
 - [MySQL](https://www.mysql.com/).
 - [Swagger](https://swagger.io/).
 - [JWT](https://jwt.io/).
-- [Arquitetura DDD](https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice).
+- [DDD](https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice).
 - [AutoMapper](https://automapper.org/).
 
 ## :floppy_disk: Clonar Repositório
