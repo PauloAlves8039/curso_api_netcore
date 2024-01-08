@@ -2,7 +2,7 @@
 
 ## :computer: Projeto
 
-Aplicação desenolvida para fins acadêmicos com o objetivo de utlizar conceitos do DDD em uma WebAPI, código do projeto foi baseado no curso [ASP.NET Core 3.1-C# API com Arquitetura DDD na PRÁTICA](https://www.udemy.com/course/aspnet-core-22-c-api-com-arquitetura-ddd-na-pratica/).
+Aplicação desenolvida para fins acadêmicos com o objetivo de utlizar conceitos do DDD em uma WebAPI, código do projeto foi baseado no curso [NETCore 3.1/NET5/6 - C# API - Arquitetura com DDD na PRÁTICA](https://www.udemy.com/course/aspnet-core-22-c-api-com-arquitetura-ddd-na-pratica/).
 
 ## :wrench: Recursos Utilizados
 
@@ -20,8 +20,11 @@ Aplicação desenolvida para fins acadêmicos com o objetivo de utlizar conceito
 
 ## :floppy_disk: Clonar Repositório
 
-`git clone https://github.com/PauloAlves8039/curso_api_netcore.git`
+```bash
+git clone https://github.com/PauloAlves8039/curso_api_netcore.git
+```
 
-## Author
+## :boy: Author
 
-:boy: [Paulo Alves](https://github.com/PauloAlves8039)
+<a href="https://github.com/PauloAlves8039"><img src="https://avatars.githubusercontent.com/u/57012714?v=4" width=70></a>
+[Paulo Alves](https://github.com/PauloAlves8039)
